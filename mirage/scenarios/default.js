@@ -6,8 +6,8 @@ export default function(server) {
 
     Make sure to define a factory for each model you want to create.
   */
-
+  // var bookmark = server.create('bookmark');
+  // var user = server.create('user');
   server.createList('user', 10);
   server.createList('bookmark', 10);
-
 }

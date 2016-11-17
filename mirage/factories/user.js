@@ -7,5 +7,8 @@ export default Mirage.Factory.extend({
   lastName(){return faker.name.lastName();},
   avatar(){return faker.internet.avatar();},
   isAdmin(){return faker.random.boolean();},
-  created(){return faker.date.recent();}
+  created(){return faker.date.recent();},
+  afterCreate(user, server) {
+    server.create('bookmarks', 3, {user});
+  }
 });

@@ -14,7 +14,9 @@ export default function() {
 
 
 
-    this.get('/users');
+    this.get('/users', (schema, request) => {
+      return schema.users.where(request.queryParams);
+    });
     this.post('/users');
     this.get('/users/:id');
     this.patch('/users/:id'); // or this.patch

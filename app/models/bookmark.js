@@ -6,5 +6,7 @@ export default DS.Model.extend({
   title: attr('string'),
   about: attr('string'),
   public: attr('boolean'),
-  created: attr('date')
+  created: attr('date', {
+    defaultValue() { return new Date();  }
+  })
 });
